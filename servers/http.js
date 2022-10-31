@@ -26,8 +26,7 @@ const corsOptions = {
 // app.get('/demo.json', cors(corsOptions), function (req, res, next) {
 app.get('/demo.json', function (req, res, next) {
   res.status(200);
-  req.result = resources;
-  res.send(req.result);
+  res.send(resources);
 });
 
 module.exports = app;
