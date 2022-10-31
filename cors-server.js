@@ -1,5 +1,5 @@
 // Final version
-const httpServer = require('./servers/http_without_cors');
+const httpServer = require('./servers/http_cors_basic');
 
 // Internal Plugins
 let port = 80;
