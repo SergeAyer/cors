@@ -8,6 +8,7 @@ app.use(cors());
 
 app.get('/demo.json', function (req, res, next) {
   res.status(200);
+  res.contentType('application/json');
   res.send(resources);
 });
 
