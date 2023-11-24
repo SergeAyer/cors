@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const app = express();
 
+app.options(cors());
 app.use(cors());
 
 app.get('/demo.json', function (req, res, next) {

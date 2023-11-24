@@ -15,6 +15,7 @@ const corsOptions = {
     }
   }
 };
+app.options(cors(corsOptions));
 app.use(cors(corsOptions));
 
 app.get('/demo.json', function (req, res, next) {

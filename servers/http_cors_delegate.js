@@ -17,7 +17,7 @@ const corsOptionsDelegate = (req, callback) => {
   // the callback expects two parameters: error and options
   callback(null, corsOptions)
 };
-
+app.options(cors(corsOptionsDelegate));
 app.use(cors(corsOptionsDelegate));
 
 app.get('/demo.json', function (req, res, next) {

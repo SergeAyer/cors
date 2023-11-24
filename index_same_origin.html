@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <div id="content"> </div>
 </head>
 <body>
 <!-- script -->
@@ -68,7 +69,10 @@
       }
     })
       .then(response => status(response))
-      .then(response => console.log(response))
+      .then(response => {
+        console.log(response);
+        document.getElementById("content").textContent = JSON.stringify(response);
+      })
       .catch(error => showError(error));
   });
 
