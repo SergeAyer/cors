@@ -1,5 +1,5 @@
-const express = require('express');
-const resources = require('../demo.json');
+import express from 'express';
+import resources from '../demo.json' with { type: 'json' };
 
 const app = express();
 
@@ -9,4 +9,4 @@ app.get('/demo.json', function (req, res, next) {
   res.send(resources);
 });
 
-module.exports = app;
+export default app;

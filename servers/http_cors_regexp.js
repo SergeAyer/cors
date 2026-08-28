@@ -1,13 +1,13 @@
-const express = require('express');
-const resources = require('../demo.json');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
+import resources from '../demo.json' with { type: 'json' };
 
 const app = express();
 
 const corsOptions = {
-  origin: /:\/\/localhost\:[0-9]{4}$/
+  origin: /:\/\/localhost:[0-9]{5}$/
 };
-app.options(cors(corsOptions));
+app.options('/{*splat}', cors(corsOptions));
 app.use(cors(corsOptions));
 
 app.get('/demo.json', function (req, res, next) {
@@ -16,4 +16,4 @@ app.get('/demo.json', function (req, res, next) {
   res.send(resources);
 });
 
-module.exports = app;
+export default app;

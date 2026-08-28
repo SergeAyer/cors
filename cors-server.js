@@ -1,5 +1,5 @@
 // Final version
-const httpServer = require('./servers/http_cors_delegate');
+import httpServer from './servers/http.js'
 
 // Internal Plugins
 let port = 80;

@@ -1,6 +1,6 @@
-const express = require('express');
-const resources = require('../demo.json');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
+import resources from '../demo.json' with { type: 'json' };
 
 const app = express();
 
@@ -17,7 +17,7 @@ const corsOptionsDelegate = (req, callback) => {
   // the callback expects two parameters: error and options
   callback(null, corsOptions)
 };
-app.options(cors(corsOptionsDelegate));
+app.options('/{*splat}', cors(corsOptionsDelegate));
 app.use(cors(corsOptionsDelegate));
 
 app.get('/demo.json', function (req, res, next) {
@@ -26,4 +26,4 @@ app.get('/demo.json', function (req, res, next) {
   res.send(resources);
 });
 
-module.exports = app;
+export default app;
